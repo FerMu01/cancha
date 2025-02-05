@@ -47,14 +47,12 @@ class GraficoActivity : AppCompatActivity() {
             BarEntry(index.toFloat(), goles.toFloat())
         }
 
-        // Definir una lista de colores para cada barra
-        val colores = listOf(Color.BLUE, Color.RED, Color.GREEN, Color.MAGENTA, Color.CYAN)
+        val colores = listOf(Color.MAGENTA, Color.YELLOW, Color.BLUE, Color.GREEN, Color.RED)
 
-        val barDataSet = BarDataSet(barEntries, "Goles")
-        barDataSet.setColors(colores) // Aplicar colores distintos a cada barra
+        val barDataSet = BarDataSet(barEntries, "")
+        barDataSet.setColors(colores)
         barDataSet.valueTextSize = 22f
 
-        // Cargar la fuente desde res/font/
         val typeface = ResourcesCompat.getFont(this, R.font.oswaldsemibold)
         if (typeface != null) {
             barDataSet.valueTypeface = typeface
@@ -62,6 +60,7 @@ class GraficoActivity : AppCompatActivity() {
 
         val barData = BarData(barDataSet)
         barChart.data = barData
+        barChart.legend.isEnabled = false
 
         // Configurar el eje X con los nombres de los jugadores
         val xAxis = barChart.xAxis
@@ -71,6 +70,10 @@ class GraficoActivity : AppCompatActivity() {
         xAxis.setDrawAxisLine(true)
         xAxis.granularity = 1f
         xAxis.textSize = 12f
+        xAxis.labelRotationAngle = 45f  // Rotar el texto para evitar que se recorte
+
+        // Agregar margen extra en la parte inferior del gráfico
+        barChart.setExtraOffsets(0f, 0f, 0f, 20f)
 
         // Aplicar la misma fuente al eje X
         if (typeface != null) {
