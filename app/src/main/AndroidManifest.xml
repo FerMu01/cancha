@@ -23,8 +23,12 @@
             android:exported="false" />
         <activity
             android:name=".JugadoresActivity"
-            android:exported="false" />
-        <activity android:name=".GraficoActivity" />
+            android:exported="false"
+            android:theme="@style/Theme.Cancha2"
+            />
+
+        <activity android:name=".GraficoActivity"
+            android:theme="@style/Theme.Cancha2" />
 
         <activity
             android:name=".MainActivity"

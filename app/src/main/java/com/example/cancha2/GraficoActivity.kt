@@ -14,6 +14,8 @@ class GraficoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grafico)
+        window.statusBarColor = android.graphics.Color.WHITE
+
 
         val barChart = findViewById<BarChart>(R.id.barChart)
 

@@ -14,6 +14,8 @@ class VideoPlayerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_player)
+        window.statusBarColor = android.graphics.Color.BLACK
+
 
         playerView = findViewById(R.id.player_view)
 

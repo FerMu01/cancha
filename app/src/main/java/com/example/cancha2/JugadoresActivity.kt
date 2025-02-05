@@ -26,6 +26,10 @@ class JugadoresActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jugadores)
 
+        window.statusBarColor = android.graphics.Color.WHITE
+
+
+        setContentView(R.layout.activity_jugadores)
         // Configurar la Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
