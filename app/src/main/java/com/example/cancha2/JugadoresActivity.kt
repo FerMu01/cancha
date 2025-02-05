@@ -30,31 +30,24 @@ class JugadoresActivity : AppCompatActivity() {
 
 
         setContentView(R.layout.activity_jugadores)
-        // Configurar la Toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        // Habilitar el botón de retroceso
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        // Configurar el evento onClick para el botón de retroceso
         toolbar.setNavigationOnClickListener {
-            onBackPressed() // Regresar a la actividad anterior
+            onBackPressed()
         }
 
-        // Referencia al logo
         val logo: ImageView = findViewById(R.id.logo)
 
-        // Configurar el evento onClick para el logo
         logo.setOnClickListener {
-            // Redirigir al MainActivity
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish() // Cierra la actividad actual
+            finish()
         }
 
-        // Configurar el RecyclerView
         recyclerView = findViewById(R.id.recyclerViewJugadores)
         recyclerView.layoutManager = LinearLayoutManager(this)
         jugadoresAdapter = JugadorAdapter(this, jugadores)
@@ -67,7 +60,7 @@ class JugadoresActivity : AppCompatActivity() {
         if (requestCode == JugadorAdapter.REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             val imageUri: Uri? = jugadoresAdapter.getLastPhotoUri()
             imageUri?.let {
-                jugadoresAdapter.updateJugadorImage(it) // Ahora esta función sí existe
+                jugadoresAdapter.updateJugadorImage(it)
             }
         }
     }

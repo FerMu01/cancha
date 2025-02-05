@@ -19,10 +19,8 @@ class VideoPlayerActivity : AppCompatActivity() {
 
         playerView = findViewById(R.id.player_view)
 
-        // Obtener la URL del video desde el Intent
         val videoUri = intent.getStringExtra("VIDEO_URI") ?: return
 
-        // Configurar ExoPlayer
         player = ExoPlayer.Builder(this).build()
         playerView.player = player
 

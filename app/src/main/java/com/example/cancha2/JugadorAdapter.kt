@@ -37,14 +37,13 @@ class JugadorAdapter(
         val jugador = jugadores[position]
         holder.bind(jugador)
         holder.itemView.setOnClickListener {
-            if (position == 1) { // Segundo jugador (índice 1)
+            if (position == 1) {
                 val intent = Intent(context, VideoPlayerActivity::class.java)
                 intent.putExtra("VIDEO_URI", "android.resource://${context.packageName}/raw/video01")
                 context.startActivity(intent)
             }
         }
 
-        // Evento para abrir la cámara
         holder.btnTomarFoto.setOnClickListener {
             val realPosition = holder.adapterPosition
             if (realPosition == RecyclerView.NO_POSITION) return@setOnClickListener

@@ -42,7 +42,6 @@ class GraficoActivity : AppCompatActivity() {
         val jugadores = listOf("Messi", "Ronaldo", "Lewandowski", "Alexis", "Mbappe")
         val goles = listOf(25, 22, 30, 28, 19)
 
-        // Convertir datos a formato de MPAndroidChart
         val barEntries = goles.mapIndexed { index, goles ->
             BarEntry(index.toFloat(), goles.toFloat())
         }
@@ -72,15 +71,12 @@ class GraficoActivity : AppCompatActivity() {
         xAxis.textSize = 12f
         xAxis.labelRotationAngle = 45f  // Rotar el texto para evitar que se recorte
 
-        // Agregar margen extra en la parte inferior del gráfico
         barChart.setExtraOffsets(0f, 0f, 0f, 20f)
 
-        // Aplicar la misma fuente al eje X
         if (typeface != null) {
             xAxis.typeface = typeface
         }
 
-        // Configuración general
         barChart.description.isEnabled = false
         barChart.animateY(1500)
         barChart.invalidate()
