@@ -19,8 +19,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/baseline_arrow_back_24"
-        app:title="Destacados"
-        app:titleTextColor="@color/black">
+        app:title="Jugadores Destacados"
+        app:titleTextColor="@color/black"
+        app:titleTextAppearance="@style/ToolbarTitleText"
+        >
 
         <!-- Logo dentro de la Toolbar -->
         <ImageView

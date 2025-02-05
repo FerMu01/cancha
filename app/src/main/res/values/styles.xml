@@ -3,5 +3,10 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <item name="android:statusBarColor">@android:color/white</item>
+
+    </style>
+    <style name="ToolbarTitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="fontFamily">@font/oswaldsemibold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

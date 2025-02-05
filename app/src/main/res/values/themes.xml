@@ -5,9 +5,8 @@
         <item name="android:statusBarColor">@android:color/white</item>
         <item name="android:windowLightStatusBar">true</item>
 
-        <!-- Personaliza tu tema claro aquí -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+
 
     <style name="Theme.Cancha2" parent="Base.Theme.Cancha2" />
 </resources>
