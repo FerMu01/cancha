@@ -36,13 +36,20 @@ class JugadorAdapter(
     override fun onBindViewHolder(holder: JugadorViewHolder, position: Int) {
         val jugador = jugadores[position]
         holder.bind(jugador)
+        holder.itemView.setOnClickListener {
+            if (position == 1) { // Segundo jugador (índice 1)
+                val intent = Intent(context, VideoPlayerActivity::class.java)
+                intent.putExtra("VIDEO_URI", "android.resource://${context.packageName}/raw/video01")
+                context.startActivity(intent)
+            }
+        }
 
         // Evento para abrir la cámara
         holder.btnTomarFoto.setOnClickListener {
-            val realPosition = holder.adapterPosition // Obtiene la posición en tiempo real
+            val realPosition = holder.adapterPosition
             if (realPosition == RecyclerView.NO_POSITION) return@setOnClickListener
 
-            lastUpdatedPosition = realPosition // Guardamos la posición del jugador
+            lastUpdatedPosition = realPosition
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             if (intent.resolveActivity(context.packageManager) != null) {
                 val photoFile: File? = try {
@@ -62,6 +69,8 @@ class JugadorAdapter(
                 }
             }
         }
+
+
     }
 
     override fun getItemCount(): Int = jugadores.size

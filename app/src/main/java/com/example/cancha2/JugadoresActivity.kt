@@ -67,4 +67,5 @@ class JugadoresActivity : AppCompatActivity() {
             }
         }
     }
+
 }
