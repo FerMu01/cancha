@@ -33,6 +33,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
 }
 
 dependencies {
@@ -51,5 +52,7 @@ dependencies {
     implementation("androidx.media3:media3-exoplayer:1.5.0")
     implementation("androidx.media3:media3-exoplayer-dash:1.5.0")
     implementation("androidx.media3:media3-ui:1.5.0")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
 
 }

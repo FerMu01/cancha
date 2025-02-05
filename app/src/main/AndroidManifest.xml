@@ -24,6 +24,8 @@
         <activity
             android:name=".JugadoresActivity"
             android:exported="false" />
+        <activity android:name=".GraficoActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
